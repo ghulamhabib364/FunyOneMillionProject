@@ -1,11 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    
+
 }
-.mainHead
-{
+
+.mainHead {
     background-color: black;
     color: white;
 
+}
+
+#mainPart {
+    background-color: tomato;
+    color: red;
 }

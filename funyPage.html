@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coding Joke Generator</title>
+</head>
+
+<body style="font-family: Arial; background-color: #1e1e2f; color: white; text-align: center; padding-top: 100px;">
+
+    <div
+        style="background-color: #2d2d44; width: 400px; margin: auto; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px black;">
+
+        <h2>😂 Coding Joke Generator</h2>
+
+        <p id="joke" style="min-height: 60px;">
+            Click the button to get a coding joke!
+        </p>
+
+        <button onclick="getJoke()"
+            style="padding: 10px; background-color: #007BFF; color: white; border: none; cursor: pointer;">
+            Get Joke
+        </button>
+
+    </div>
+
+    <script>
+        function getJoke() {
+
+            fetch("https://v2.jokeapi.dev/joke/Programming?type=single")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("joke").innerText = data.joke;
+                })
+                .catch(error => {
+                    document.getElementById("joke").innerText = "Error loading joke.";
+                });
+
+        }
+    </script>
+
+</body>
+
+</html>
